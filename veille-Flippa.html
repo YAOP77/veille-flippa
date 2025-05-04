@@ -1,0 +1,480 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css?family=Lora:regular,500,600,700,italic,500italic,600italic,700italic" rel="stylesheet" />
+    <title>Veille sur Flippa.com</title>
+    <style>
+        body {
+            font-family: 'Lora', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #FFF;
+            color: #394142;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        header {
+            background-color: #394142;
+            padding: 15px 0;
+        }
+        
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 20px;
+        }
+        
+        .logo {
+            font-weight: bold;
+            font-size: 24px;
+            color: #FFF;
+        }
+        
+        nav ul {
+            display: flex;
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+        
+        nav ul li {
+            margin-left: 20px;
+        }
+        
+        nav ul li a {
+            text-decoration: none;
+            color: #FFF;
+            font-size: 14px;
+            transition: color 0.3s ease;
+            text-transform: uppercase;
+        }
+
+        nav ul li a:hover {
+            color: #b9b9b9;
+        }
+        
+        .hero {
+            background-color: #535D5E;
+            padding: 60px 20px;
+            text-align: center;
+        }
+        
+        .hero-content h1 {
+            font-size: 2.5em;
+            margin-bottom: 15px;
+            color: #FFF;
+        }
+        
+        .hero-content p {
+            font-size: 16px;
+            color: #FFF;
+            max-width: 600px;
+            margin: 0 auto 30px;
+        }
+        
+        .cta-button {
+            display: inline-block;
+            padding: 10px 30px;
+            border: 1px solid #FFF;
+            color: #FFF;
+            text-decoration: none;
+            text-transform: uppercase;
+            font-size: 14px;
+            transition: all 0.3s ease;
+        }
+        
+        .cta-button:hover {
+            background-color: #FFF;
+            color: #394142;
+        }
+        
+        .subheading {
+            padding: 40px 20px;
+            text-align: center;
+            background-color: #FFF;
+        }
+        
+        .subheading h2 {
+            font-size: 2.5em;
+            margin-bottom: 20px;
+            color: #000000;
+            text-transform: uppercase;
+        }
+        
+        .subheading p {
+            font-size: 16px;
+            color: #535D5E;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .intro-section .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .intro-section {
+            padding: 40px 20px;
+            display: flex;
+            align-items: center;
+            background-color: #394142;
+        }
+        
+        .intro-image {
+            height: 300px;
+            background-color: #535D5E;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #FFF;
+        }
+
+        .intro-image img {
+            max-width: 100%;
+            max-height: 100%;
+            object-fit: cover;
+        }
+        
+        .intro-content {
+            flex: 1;
+            padding: 0 160px;
+        }
+        
+        .intro-content h3 {
+            font-size: 2.5em;
+            margin-bottom: 15px;
+            color: #FFF;
+            text-align: center;
+            text-transform: uppercase;
+        }
+        
+        .intro-content p {
+            text-align: center;
+            font-size: 15px;
+            color: #FFF;
+            margin-bottom: 20px;
+        }
+        
+        .link-button {
+            display: block;
+            width: 150px;
+            margin: 0 auto;
+            padding: 8px 0;
+            border: 1px solid #FFF;
+            color: #FFF;
+            text-decoration: none;
+            text-transform: uppercase;
+            font-size: 14px;
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+        
+        .link-button:hover {
+            background-color: #FFF;
+            color: #394142;
+        }
+        
+        .services {
+            padding: 30px;
+            background-color: #535D5E;
+            color: #FFF;
+            /* padding: 40px 20px; */
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        
+        .service {
+            flex-basis: 90%;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .service p {
+            color: #FFF;
+        }
+
+        .service h4 {
+            font-size: 2.3em;
+            margin-bottom: 10px;
+            color: #b9b9b9;
+            text-transform: uppercase;
+        }
+        
+        .social-proof {
+            padding: 40px 20px;
+            text-align: center;
+            background-color: #FFF;
+            margin-bottom: 20px;
+        }
+        
+        .social-proof h3 {
+            font-size: 2.5em;
+            margin-bottom: 15px;
+            color: #000000;
+            text-transform: uppercase;
+        }
+        
+        .social-proof p {
+            font-size: 14px;
+            color: #535D5E;
+            font-style: italic;
+        }
+        
+        .extras {
+            padding: 40px;
+            text-align: center;
+            background-color: #394142;
+            /* margin-bottom: 20px; */
+        }
+        
+        .extras h3 {
+            font-size: 2.5em;
+            margin-bottom: 15px;
+            color: #b9b9b9;
+            text-transform: uppercase;
+        }
+        
+        .extras p {
+            font-size: 14px;
+            color: #fff;
+        }
+        
+        footer {
+            background-color: #242727;
+            padding: 30px 20px;
+        }
+        
+        .footer-content {
+            display: flex;
+            justify-content: space-between;
+        }
+        
+        .footer-links {
+            flex: 1;
+        }
+        
+        .footer-links ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        
+        .footer-links ul li {
+            margin-bottom: 10px;
+        }
+        
+        .footer-links ul li a {
+            text-decoration: none;
+            color: #FFF;
+            font-size: 14px;
+            text-transform: uppercase;
+        }
+        
+        .footer-logo {
+            flex: 1;
+            text-align: center;
+            font-weight: bold;
+            font-size: 24px;
+            color: #FFF;
+        }
+        
+        .footer-contact {
+            flex: 1;
+            text-align: right;
+        }
+        
+        .footer-contact p {
+            margin: 5px 0;
+            font-size: 14px;
+            color: #FFF;
+            text-transform: uppercase;
+        }
+        
+        .alternatives-container p a {
+            transition: 0.7s;
+            text-decoration: underline;
+        }
+
+        .alternatives-container p a:hover {
+            color: #ccc;
+        }
+
+        .alternatives-container {
+            padding-top: 40px;
+            display: flex;
+            flex-wrap: wrap; 
+            justify-content: space-between; 
+            max-width: 100%; 
+            margin: 0 auto;
+            /* border-bottom: 1px solid #ccc;
+            border-top: 1px solid #ccc; */
+        }
+        
+        .alternative {
+            /* flex-basis: 48%;  */
+            margin-bottom: 30px; 
+            text-align: left;
+            padding: 20px; 
+            background-color: #596466; 
+            border-left: 7px solid #000;
+            border-radius: 10px;
+            color: #FFF;
+            transition: background-color 0.3s ease;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        .alternative:hover {
+            background-color: #394142; 
+            transition: background-color 0.3s ease;
+        }
+        
+        .alternative h4 {
+            color: #FFF; 
+            margin-top: 0;
+        }
+        
+        .alternative a {
+            color: #FFF; 
+            text-decoration: none; 
+            font-weight: bold;
+        }
+
+        .alternative p {
+            color: #FFF;
+        }
+
+        #service-avantages {
+            border-right: 3px solid #242727;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container header-content">
+            <div class="logo">FLIPPA</div>
+            <nav>
+                <ul>
+                    <li><a href="#">SERVICES</a></li>
+                    <li><a href="#">À PROPOS</a></li>
+                    <li><a href="#">POINTS CLÉS</a></li>
+                    <li><a href="#">ALTERNATIVES</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    
+    <section class="hero">
+        <div class="container hero-content">
+            <h1>FLIPPA.COM : EXPLORATION COMPLÈTE</h1>
+            <p>Découvrez la première place de marché mondiale pour l'achat et la vente d'actifs numériques fondée en 2009.</p>
+        </div>
+    </section>
+    
+    <section class="subheading">
+        <div class="container">
+            <h2>QU'EST-CE QUE FLIPPA ET QUELS SONT SES SERVICES</h2>
+            <p>Flippa est une place de marché mondiale permettant d'acheter et de vendre des actifs numériques tels que des sites web, des applications, des noms de domaine et des entreprises en ligne. Elle offre une interface conviviale avec des outils d'évaluation et de négociation intégrés.</p>
+        </div>
+    </section>
+    
+    <section class="intro-section">
+        <div class="container" style="display: flex;">
+            <div class="intro-image">
+                <img src="images/flippa-maxresdefault.jpg" alt="">
+            </div>
+            <div class="intro-content">
+                <h3>LES FONCTIONNALITÉS DE FLIPPA</h3>
+                <p>
+                    <strong>Évaluation d’entreprise : </strong> Flippa propose des outils pour estimer la valeur de votre actif numérique. <br> <br>
+                    <strong>Vérification des annonces : </strong> Les annonces de plus de 50 000 $ sont soumises à une vérification approfondie. <br> <br>
+                    <strong>Services de transfert : </strong> Flippa offre des services pour faciliter le transfert des actifs numériques entre acheteurs et vendeurs.
+                </p>
+                <a href="https://flippa.com" target="_blank" class="link-button">Site officiel</a>
+            </div>
+        </div>
+    </section>
+    
+    <section class="services">
+        <div class="container" style="display: flex; justify-content: space-between;">
+            <div class="service" id="service-avantages">
+                <h4>AVANTAGES</h4>
+                <p>• Accessibilité : Plateforme ouverte à tous, des débutants aux investisseurs expérimentés.</p>
+                <p>• Diversité des actifs : Large gamme d'actifs numériques disponibles.</p>
+                <p>• Outils intégrés : Fonctionnalités pour faciliter les transactions.</p>
+            </div>
+            <div class="service">
+                <h4>LIMITATIONS</h4>
+                <p>• Vérification limitée : Les annonces de moins de 50 000 $ ne sont pas toujours vérifiées.</p>
+                <p>• Responsabilité de la diligence raisonnable : Les acheteurs doivent effectuer leurs propres vérifications.</p>
+                <p>• Support limité : Coordination nécessaire entre l'acheteur et le vendeur.</p>
+            </div>
+        </div>
+    </section>
+    
+    <section class="social-proof">
+        <div class="container">
+            <h3>ALTERNATIVES À FLIPPA</h3>
+            <div class="alternatives-container">
+                <div class="alternative">
+                    <h4>1. Empire Flippers</h4>
+                    <p>• Spécialisation : Vente d'entreprises en ligne établies avec des revenus significatifs.</p>
+                    <p>• Vérification rigoureuse : Toutes les annonces sont vérifiées pour assurer leur légitimité.</p>
+                    <p style="margin: 10px 0;"><a href="https://empireflippers.com/" target="_blank">En savoir plus : Empire Flippers</a></p>
+                </div>
+                <div class="alternative">
+                    <h4>2. Motion Invest</h4>
+                    <p>• Focus : Sites de contenu générant des revenus modestes.</p>
+                    <p>• Vérification : Chaque site est examiné pour garantir sa qualité.</p>
+                    <p style="margin: 10px 0;"><a href="https://www.motioninvest.com/" target="_blank">Découvrir : Motion Invest</a></p>
+                </div>
+                <div class="alternative">
+                    <h4>3. Acquire.com</h4>
+                    <p>• Cible : Startups et entreprises SaaS.</p>
+                    <p>• Processus simplifié : Facilite les transactions sans intermédiaires.</p>
+                    <p style="margin: 10px 0;"><a href="https://acquire.com/" target="_blank">Explorer : Acquire.com</a></p>
+                </div>
+                <div class="alternative">
+                    <h4>4. DotMarket</h4>
+                    <p>• Marché francophone : Spécialisé dans la vente de sites web rentables en français.</p>
+                    <p>• Accompagnement personnalisé : Offre un soutien tout au long du processus de vente.</p>
+                    <p style="margin: 10px 0;"><a href="https://www.dotmarket.eu/" target="_blank">Visiter : DotMarket</a></p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <section class="extras">
+        <div class="container">
+            <h3>CONCLUSION</h3>
+            <p>Flippa est une plateforme accessible pour acheter et vendre des actifs numériques, mais elle nécessite une diligence raisonnable de la part des utilisateurs. Pour ceux qui recherchent des options avec une vérification plus rigoureuse ou un accompagnement personnalisé, des alternatives comme Empire Flippers, Motion Invest, Acquire.com et DotMarket peuvent être plus adaptées.</p>
+        </div>
+    </section>
+    
+    <footer>
+        <div class="container footer-content">
+            <div class="footer-links">
+                <ul>
+                    <li><a href="#">Empire Flippers</a></li>
+                    <li><a href="#">Motion Invest</a></li>
+                    <li><a href="#">Acquire.com</a></li>
+                </ul>
+            </div>
+            <div class="footer-logo">FLIPPA</div>
+            <div class="footer-contact">
+                <p>Contact</p>
+                <p>DotMarket</p>
+                <p>Flippa.com</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
